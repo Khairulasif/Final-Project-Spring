@@ -2,8 +2,10 @@ package com.example.FinalProject.controller;
 
 import com.example.FinalProject.empdto.AddAdminDto;
 import com.example.FinalProject.empdto.AddAttenDto;
+import com.example.FinalProject.empdto.ProjectAddDto;
 import com.example.FinalProject.entity.AddAdminEntity;
 import com.example.FinalProject.entity.AddAttenEntity;
+import com.example.FinalProject.entity.ProjectAddEntity;
 import com.example.FinalProject.service.AddAdminService;
 import com.example.FinalProject.service.AddAttenService;
 import org.springframework.beans.BeanUtils;
@@ -45,5 +47,50 @@ public class AddAdminControl {
         }
 
         return dtos;
+    }
+
+
+    @GetMapping("/adminlistget/{id}")
+    public AddAdminEntity edit(@PathVariable("id") Long id){
+        AddAdminEntity user;
+
+        user = addAdminService.userUpdate(id);
+        if (user.getId() != null) {
+//            ProjectListDto userDto = new ProjectListDto();
+//            BeanUtils.copyProperties(user, userDto);
+//            user.getBudget()-user.getSpent();
+            return user;
+        }
+        return null;
+    }
+
+    @PutMapping("/adminlistedit/{id}")
+    public void update(@RequestBody AddAdminDto addAdminDto, @PathVariable("id") Long id ) {
+        if (addAdminDto != null) {
+            addAdminDto.setId(id);
+            AddAdminEntity projEntity = new AddAdminEntity();
+            BeanUtils.copyProperties(addAdminDto, projEntity);
+
+
+            addAdminService.userSave(projEntity);
+        }
+    }
+
+    @DeleteMapping("/admindelete/{id}")
+    public void delete(@PathVariable("id") Long id){
+
+        addAdminService.userDelete(id);
+    }
+
+    @GetMapping("/admingetbyemail/{email}")
+    public AddAdminEntity getUserByEmail(@PathVariable String email) {
+
+        AddAdminEntity admins;
+        admins = addAdminService.getUserByEmail(email);
+
+        if (admins != null) {
+            return admins;
+        }
+        return null;
     }
 }

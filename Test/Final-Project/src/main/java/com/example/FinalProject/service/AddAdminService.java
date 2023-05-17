@@ -32,4 +32,8 @@ public class AddAdminService {
     public void userDelete(Long id) {
         addAdminRepo.deleteById(id);
     }
+
+    public AddAdminEntity getUserByEmail(String email) {
+        return addAdminRepo.findByEmail(email);
+    }
 }
