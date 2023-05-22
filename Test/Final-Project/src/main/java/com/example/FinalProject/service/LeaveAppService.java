@@ -22,6 +22,10 @@ public class LeaveAppService {
     }
 
     public List<LeaveAppEntity> userGet() {
+
+        
+
+
         return leaveAppRepo.findAll();
     }
 

@@ -38,10 +38,19 @@ public class LeaveAppControl {
 
         List<LeaveAppEntity> users = leaveAppService.userGet();
         List<LeaveAppDto> dtos = new ArrayList<>();
+
+
+
         for (LeaveAppEntity user: users) {
+
+//            if (user.getStatus() == null) {
+//                user.setStatus("Pending");
+//            }
             LeaveAppDto userDto = new LeaveAppDto();
             BeanUtils.copyProperties(user, userDto);
             dtos.add(userDto);
+
+
         }
 
         return dtos;
