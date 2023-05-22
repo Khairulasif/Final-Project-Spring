@@ -23,6 +23,10 @@ public class EmpService {
         return empRepo.findAll();
     }
 
+    public EmpEntity empGetSelected(Long id) {
+        return empRepo.findByselected(id);
+    }
+
 
     public EmpEntity userUpdate(Long id) {
         return empRepo.findById(id).orElse(new EmpEntity());

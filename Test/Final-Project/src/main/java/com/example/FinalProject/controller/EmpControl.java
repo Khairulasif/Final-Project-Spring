@@ -76,4 +76,32 @@ public class EmpControl {
         }
         return null;
     }
+
+//    @GetMapping("/empgetforattendance")
+//    List<EmpEntity> get2() {
+//
+//        List<EmpEntity> users = empService.empGetSelected();
+////        List<EmpDto> dtos = new ArrayList<>();
+////        for (EmpEntity user: users) {
+////            EmpDto userDto = new EmpDto();
+////            BeanUtils.copyProperties(user, userDto);
+////            dtos.add(userDto);
+////        }
+//
+//        return users;
+//    }
+
+    @GetMapping("/empgetforattendance/{id}")
+    public EmpEntity editAtten(@PathVariable("id") Long id){
+        EmpEntity user;
+        user = empService.empGetSelected(id);
+//        if (user.getId() != null) {
+//            EmpDto userDto = new EmpDto();
+//            BeanUtils.copyProperties(user, userDto);
+//            return userDto;
+//        }
+        return user;
+    }
+
+
 }
