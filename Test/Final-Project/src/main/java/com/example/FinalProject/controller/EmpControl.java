@@ -95,11 +95,11 @@ public class EmpControl {
     public EmpEntity editAtten(@PathVariable("id") Long id){
         EmpEntity user;
         user = empService.empGetSelected(id);
-//        if (user.getId() != null) {
-//            EmpDto userDto = new EmpDto();
-//            BeanUtils.copyProperties(user, userDto);
-//            return userDto;
-//        }
+        List<EmpEntity> users = empService.userGet();
+
+
+
+
         return user;
     }
 
