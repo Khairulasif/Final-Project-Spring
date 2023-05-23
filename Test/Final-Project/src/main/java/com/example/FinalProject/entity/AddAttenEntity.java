@@ -21,7 +21,9 @@ public class AddAttenEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
+    private Long empId;
     private String name;
     //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
     private LocalDate date;

@@ -16,7 +16,6 @@ public class EmpService {
     public void userSave(EmpEntity empEntity) {
 
         empRepo.save(empEntity);
-
     }
 
     public List<EmpEntity> userGet() {

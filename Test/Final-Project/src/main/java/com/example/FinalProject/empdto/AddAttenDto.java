@@ -12,6 +12,7 @@ public class AddAttenDto {
 
 
     private Long id;
+    private Long empId;
     private String name;
     //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
     private LocalDate date;
