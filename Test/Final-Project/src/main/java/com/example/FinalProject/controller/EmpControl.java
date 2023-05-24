@@ -34,7 +34,7 @@ public class EmpControl {
     @PutMapping("/empedit/{id}")
     public void update( @RequestBody EmpDto empDto, @PathVariable("id") Long id ) {
         if (empDto != null) {
-            empDto.setId(id);
+            empDto.setEmployeeId(id);
             EmpEntity empEntity = new EmpEntity();
             BeanUtils.copyProperties(empDto, empEntity);
 
@@ -69,7 +69,7 @@ public class EmpControl {
     public EmpDto edit(@PathVariable("id") Long id){
         EmpEntity user;
         user = empService.userUpdate(id);
-        if (user.getId() != null) {
+        if (user.getEmployeeId() != null) {
             EmpDto userDto = new EmpDto();
             BeanUtils.copyProperties(user, userDto);
             return userDto;

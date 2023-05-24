@@ -22,7 +22,7 @@ public class EmpEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private Long id;
+    private Long employeeId;
     private String fname;
     private String lname;
     private String mobile;

@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Data
 public class EmpDto {
-    private Long id;
+    private Long employeeId;
     private String fname;
     private String lname;
     private String mobile;

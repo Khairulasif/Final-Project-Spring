@@ -1,7 +1,9 @@
 package com.example.FinalProject.service;
 
+import com.example.FinalProject.empdto.AttendanceGetDto;
 import com.example.FinalProject.entity.AddAttenEntity;
 import com.example.FinalProject.repository.AddAttenRepo;
+import com.example.FinalProject.repository.AttendanceGetRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ public class  AddAttenService {
 
     @Autowired
     AddAttenRepo addAttenRepo;
+
 
     public void userSave(AddAttenEntity addAttenEntity) {
 
@@ -30,4 +33,6 @@ public class  AddAttenService {
     public void userDelete(Long id) {
         addAttenRepo.deleteById(id);
     }
+
+
 }
