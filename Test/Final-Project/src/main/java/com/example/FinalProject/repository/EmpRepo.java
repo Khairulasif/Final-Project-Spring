@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface EmpRepo extends JpaRepository<EmpEntity, Long> {
 
-    @Query(value = "SELECT * FROM emp_entity WHERE id = :id", nativeQuery = true)
+    @Query(value = "SELECT * FROM emp_entity WHERE employee_id = :id", nativeQuery = true)
     EmpEntity findByselected(@Param("id") Long id);
 
 //    @Query(value = "SELECT * FROM add_admin_entity WHERE email = ?1", nativeQuery = true)

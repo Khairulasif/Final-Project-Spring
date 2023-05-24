@@ -17,11 +17,31 @@ public class AttendanceGetControl {
     @Autowired
     AttendanceGetService attendanceGetService;
 
+//    @GetMapping("/atteendanceList")
+//
+//    List<AttendanceGetDto> getAttendance() {
+//
+//        List<AttendanceGetDto> users = attendanceGetService.attenGet();
+//
+//
+//        return users;
+//    }
+
     @GetMapping("/atteendanceList")
 
     List<AttendanceGetDto> getAttendance() {
 
-        List<AttendanceGetDto> users = attendanceGetService.attenGet();
+        List<AttendanceGetDto> users = attendanceGetService.attendanceGet();
+
+
+        return users;
+    }
+
+    @GetMapping("/absentList")
+
+    List<AttendanceGetDto> getAbsent() {
+
+        List<AttendanceGetDto> users = attendanceGetService.absentGet();
 
 
         return users;

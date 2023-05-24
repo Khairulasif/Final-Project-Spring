@@ -13,7 +13,15 @@ public class AttendanceGetService {
     @Autowired
     AttendanceGetRepo attendanceGetRepo;
 
-    public List<AttendanceGetDto> attenGet() {
-        return attendanceGetRepo.findAllAttendance();
+//    public List<AttendanceGetDto> attenGet() {
+//        return attendanceGetRepo.findAllAttendance();
+//    }
+
+    public List<AttendanceGetDto> attendanceGet() {
+        return attendanceGetRepo.findAttendance();
+    }
+
+    public List<AttendanceGetDto> absentGet() {
+        return attendanceGetRepo.findAbsent();
     }
 }
