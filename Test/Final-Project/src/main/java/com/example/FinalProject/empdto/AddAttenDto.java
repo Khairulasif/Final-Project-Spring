@@ -1,5 +1,7 @@
 package com.example.FinalProject.empdto;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
 import lombok.Data;
 
 import javax.persistence.GeneratedValue;
@@ -16,7 +18,9 @@ public class AddAttenDto {
     private String name;
     //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
     private LocalDate date;
+//    @JsonDeserialize(using = ForTimeSerialize.class)
     private LocalTime signIn;
+//    @JsonDeserialize(using = ForTimeSerialize.class)
     private LocalTime signOut;
     private LocalTime workingHour;
     private String status;

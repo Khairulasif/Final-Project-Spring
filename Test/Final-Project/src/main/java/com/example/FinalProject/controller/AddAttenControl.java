@@ -53,7 +53,7 @@ public class AddAttenControl {
 
         List<AddAttenEntity> users = addAttenService.userGet();
         List<AddAttenDto> dtos = new ArrayList<>();
-        for (AddAttenEntity user: users) {
+        for (AddAttenEntity user : users) {
             AddAttenDto userDto = new AddAttenDto();
             BeanUtils.copyProperties(user, userDto);
             dtos.add(userDto);
@@ -62,9 +62,28 @@ public class AddAttenControl {
         return dtos;
     }
 
+//    @GetMapping("/getByDepartment")
+//    List<AddAttenEntity> getByDep() {
+//
+//        List<AddAttenEntity> users = addAttenService.getByDepartment();
+//
+//
+//        return users;
+//    }
 
-
-
-
+    @GetMapping("/getByDepartment/{department}")
+    public List<AddAttenEntity> getByDepartment(@PathVariable String department) {
+        return addAttenService.getByDep(department);
+    }@GetMapping("/getByDate/{date}")
+    public List<AddAttenEntity> getByDateAtt(@PathVariable String date) {
+        return addAttenService.getByDate(date);
+    }
 
 }
+
+
+
+
+
+
+

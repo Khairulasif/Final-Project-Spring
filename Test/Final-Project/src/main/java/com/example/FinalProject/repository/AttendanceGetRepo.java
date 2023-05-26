@@ -26,4 +26,5 @@ public interface AttendanceGetRepo extends JpaRepository<AttendanceGetDto, Long>
             "on e.employee_id = ae.emp_id\n" +
             "where ae.emp_id IS NULL\n", nativeQuery = true)
     List<AttendanceGetDto> findAbsent();
+
 }

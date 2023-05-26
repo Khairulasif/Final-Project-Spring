@@ -1,5 +1,9 @@
 package com.example.FinalProject.entity;
 
+import com.example.FinalProject.empdto.ForTimeSerialize;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,8 +30,11 @@ public class AddAttenEntity {
     private Long empId;
     private String name;
     //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
+
     private LocalDate date;
+//    @JsonDeserialize(using = ForTimeSerialize.class)
     private LocalTime signIn;
+//    @JsonDeserialize(using = ForTimeSerialize.class)
     private LocalTime signOut;
     private LocalTime workingHour;
     private String status;

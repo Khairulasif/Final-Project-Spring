@@ -18,14 +18,21 @@ public class AttendanceGetService {
     @Autowired
     AttendanceGetRepo attendanceGetRepo;
 
-    LocalDate currentDate = LocalDate.now(Clock.systemDefaultZone()) ;
+    LocalDate currentDate = LocalDate.now() ;
 
 //    public List<AttendanceGetDto> attenGet() {
 //        return attendanceGetRepo.findAllAttendance();
 //    }
 
     public List<AttendanceGetDto> attendanceGet() {
-        return attendanceGetRepo.findAttendance();
+        List<AttendanceGetDto> attendanceEmp = attendanceGetRepo.findAttendance();
+        List<AttendanceGetDto> withDateAttenGet = new ArrayList<>();
+       for (AttendanceGetDto emp: attendanceEmp) {
+           if (emp.getDate().isEqual(currentDate)) {
+               withDateAttenGet.add(emp);
+           }
+       }
+       return withDateAttenGet;
     }
 
     public List<AttendanceGetDto> absentGet() {
@@ -46,8 +53,8 @@ public class AttendanceGetService {
 
     }
 
-//    public void setCurrentDate() {
-//        this.currentDate = LocalDate.now(Clock.systemDefaultZone()) ;
-//
-//    }
+    public void setCurrentDate() {
+        this.currentDate = LocalDate.now(Clock.systemDefaultZone()) ;
+
+    }
 }

@@ -19,10 +19,13 @@ public class AttendanceGetDto {
     private Long employeeId;
     private String fname;
 
+
+
     private Long id;
     private Long empId;
     private String name;
     private LocalDate date;
+
     private LocalTime signIn;
     private LocalTime signOut;
 
