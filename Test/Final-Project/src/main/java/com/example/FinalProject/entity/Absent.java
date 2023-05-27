@@ -1,4 +1,4 @@
-package com.example.FinalProject.empdto;
+package com.example.FinalProject.entity;
 
 import lombok.Data;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -10,19 +10,19 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+
 @Data
-@EntityScan
 @Entity
-public class AbsentDto {
+public class Absent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     Long id;
-    Long employeeId;
+    String employeeId;
     String fname;
     LocalDate date;
-//    String empId;
+    String empId;
     String name;
     String department;
     String designation;
@@ -30,5 +30,4 @@ public class AbsentDto {
     LocalTime signOut;
 
     String status;
-
 }

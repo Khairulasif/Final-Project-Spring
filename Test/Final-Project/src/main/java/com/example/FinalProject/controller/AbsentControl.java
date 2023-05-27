@@ -15,15 +15,19 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class AbsentControl {
 
-//    @Autowired
-//    AbsentService absentService;
-//
-//    @PostMapping("/absentEmpPost")
-//    public void saveAbsEmp(@RequestBody List<AbsentDto> absentEmp) {
-//
-//
-//        absentService.absentEmpSave(absentEmp);
-//    }
+    @Autowired
+    AbsentService absentService;
+
+
+
+
+
+    @PostMapping("/absentEmpPost")
+    public void saveAbsEmp(@RequestBody List<AbsentDto> absentEmp) {
+
+
+        absentService.absentEmpSave(absentEmp);
+    }
 
 //    @GetMapping("/absentList")
 //
@@ -34,6 +38,16 @@ public class AbsentControl {
 //
 //        return users;
 //    }
+
+    @GetMapping("/getByDepartmentAbsentEmp/{department}")
+    public List<AbsentDto> getByDepartment(@PathVariable String department) {
+        return absentService.getByDep(department);
+    }
+
+    @GetMapping("/getByDateAbsentEmp/{date}")
+    public List<AbsentDto> getByDateAtt(@PathVariable String date) {
+        return absentService.getByDate(date);
+    }
 
 }
 

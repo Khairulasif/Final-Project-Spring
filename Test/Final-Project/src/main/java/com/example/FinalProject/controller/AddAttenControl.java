@@ -74,7 +74,9 @@ public class AddAttenControl {
     @GetMapping("/getByDepartment/{department}")
     public List<AddAttenEntity> getByDepartment(@PathVariable String department) {
         return addAttenService.getByDep(department);
-    }@GetMapping("/getByDate/{date}")
+    }
+
+    @GetMapping("/getByDate/{date}")
     public List<AddAttenEntity> getByDateAtt(@PathVariable String date) {
         return addAttenService.getByDate(date);
     }
