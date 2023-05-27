@@ -21,7 +21,7 @@ public interface AttendanceGetRepo extends JpaRepository<AttendanceGetDto, Long>
             "where e.employee_id = ae.emp_id\n", nativeQuery = true)
     List<AttendanceGetDto> findAttendance();
 
-    @Query(value = "SELECT e.employee_id, e.fname, ae.id, ae.emp_id, ae.name, ae.date, ae.sign_in, ae.sign_out, ae.working_hour, ae.department, ae.designation, ae.status FROM finalproject.emp_entity e\n" +
+    @Query(value = "SELECT e.employee_id, e.fname, ae.id, ae.emp_id, ae.name, ae.date, ae.sign_in, ae.sign_out, ae.working_hour, e.department, e.designation, ae.status FROM finalproject.emp_entity e\n" +
             "left join finalproject.add_atten_entity ae\n" +
             "on e.employee_id = ae.emp_id\n" +
             "where ae.emp_id IS NULL\n", nativeQuery = true)

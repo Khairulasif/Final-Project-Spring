@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Data
 @EntityScan
@@ -17,11 +18,16 @@ public class AbsentDto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    Long employeeId;
+    Long id;
+    String employeeId;
     String fname;
     LocalDate date;
+    String empId;
+    String name;
     String department;
     String designation;
+    LocalTime signIn;
+    LocalTime signOut;
 
     String status;
 

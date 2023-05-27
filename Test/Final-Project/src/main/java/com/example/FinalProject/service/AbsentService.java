@@ -15,19 +15,19 @@ import java.util.List;
 @Service
 public class AbsentService {
 
-//    @Autowired
-//    AbsentRepo absentRepo;
-//
+    @Autowired
+    AbsentRepo absentRepo;
+
 //    LocalDate currentDate = LocalDate.now(Clock.systemDefaultZone()) ;
-//
-//    public void absentEmpSave(List<AbsentDto> absentDtos) {
-//
-//        List<AbsentDto> absent = absentDtos;
-//
-//        for (AbsentDto abs: absent) {
-//            absentRepo.save(abs);
-//        }
-//    }
+
+    public void absentEmpSave(List<AbsentDto> absentDtos) {
+
+//        absentRepo.save(absentDtos);
+}
+
+
+
+        }
 //
 //    public List<AbsentDto> absentGet() {
 //
@@ -51,6 +51,6 @@ public class AbsentService {
 //        this.currentDate = LocalDate.now(Clock.systemDefaultZone()) ;
 //
 //    }
-}
+
 
 
