@@ -27,7 +27,7 @@ public class AttendanceGetControl {
 //        return users;
 //    }
 
-    @GetMapping("/atteendanceList")
+    @GetMapping("/attendanceList")
 
     List<AttendanceGetDto> getAttendance() {
 

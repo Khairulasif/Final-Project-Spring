@@ -29,6 +29,7 @@ public class AttendanceGetService {
         List<AttendanceGetDto> withDateAttenGet = new ArrayList<>();
        for (AttendanceGetDto emp: attendanceEmp) {
            if (emp.getDate().isEqual(currentDate)) {
+               System.out.println(currentDate);
                withDateAttenGet.add(emp);
            }
        }
