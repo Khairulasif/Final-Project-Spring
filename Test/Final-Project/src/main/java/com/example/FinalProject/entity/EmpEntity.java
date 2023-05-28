@@ -26,6 +26,7 @@ public class EmpEntity  {
     private String mobile;
     private String email;
     private String gender;
+    private String department;
 //    @ManyToOne
 //    @JoinColumn(name = "departmentId")
 

@@ -47,17 +47,17 @@ public class AddDepartmentControl {
 
 
     @GetMapping("/departmentget")
-    List<AddDepartmentDto> get() {
+    List<AddDepartmentEntity> get() {
 
         List<AddDepartmentEntity> department = addDepartmentService.userGet();
-        List<AddDepartmentDto> dtos = new ArrayList<>();
-        for (AddDepartmentEntity user: department) {
-            AddDepartmentDto depDto = new AddDepartmentDto();
-            BeanUtils.copyProperties(user, depDto);
-            dtos.add(depDto);
-        }
+//        List<AddDepartmentDto> dtos = new ArrayList<>();
+//        for (AddDepartmentEntity user: department) {
+//            AddDepartmentDto depDto = new AddDepartmentDto();
+//            BeanUtils.copyProperties(user, depDto);
+//            dtos.add(depDto);
+//        }
 
-        return dtos;
+        return department;
     }
 
     @DeleteMapping("/departmendelete/{id}")
