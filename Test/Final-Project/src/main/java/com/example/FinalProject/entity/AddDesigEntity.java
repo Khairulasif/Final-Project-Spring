@@ -20,6 +20,6 @@ public class AddDesigEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private Long id;
+    private Long designationId;
     private String name;
 }

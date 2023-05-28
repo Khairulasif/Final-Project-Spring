@@ -46,7 +46,7 @@ public class AbsentService {
         System.out.println("------------------------");
         List<AttendanceGetDto> absentEmp = attendanceGetRepo.findAbsent();
 
-        List<AttendanceGetDto> withDateAbsent = new ArrayList<>();
+
         for (AttendanceGetDto emp: absentEmp) {
             AbsentDto absentDto = new AbsentDto();
             absentDto.setDate(LocalDate.now());

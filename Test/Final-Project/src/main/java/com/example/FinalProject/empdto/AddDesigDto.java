@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class AddDesigDto {
-    private Long id;
+    private Long designationId;
     private String name;
 }

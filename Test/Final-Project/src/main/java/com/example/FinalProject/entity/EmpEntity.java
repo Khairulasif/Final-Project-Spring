@@ -4,11 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.aspectj.weaver.Position;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -28,7 +26,11 @@ public class EmpEntity  {
     private String mobile;
     private String email;
     private String gender;
-    private String department;
+    @ManyToOne
+    @JoinColumn(name = "departmentId")
+    private AddDesigEntity designation;
+    @ManyToOne
+    @JoinColumn(name = "designationId")
     private String designation;
     private String nationality;
     private Long nic;

@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class AddDepartmentDto {
 
-    private Long id;
+    private Long departmentId;
     private String name;
 }

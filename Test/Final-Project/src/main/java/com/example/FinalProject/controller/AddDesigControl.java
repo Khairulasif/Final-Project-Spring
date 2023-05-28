@@ -35,7 +35,7 @@ public class AddDesigControl {
     @PutMapping("/designationedit/{id}")
     public void update( @RequestBody AddDesigDto addDesigDto, @PathVariable("id") Long id ) {
         if (addDesigDto != null) {
-            addDesigDto.setId(id);
+            addDesigDto.setDesignationId(id);
             AddDesigEntity desigEntity = new AddDesigEntity();
             BeanUtils.copyProperties(addDesigDto, desigEntity);
 
@@ -71,7 +71,7 @@ public class AddDesigControl {
     public AddDesigDto edit(@PathVariable("id") Long id){
         AddDesigEntity desig;
         desig = addDesigService.userUpdate(id);
-        if (desig.getId() != null) {
+        if (desig.getDesignationId() != null) {
             AddDesigDto desigDto = new AddDesigDto();
             BeanUtils.copyProperties(desig, desigDto);
             return desigDto;

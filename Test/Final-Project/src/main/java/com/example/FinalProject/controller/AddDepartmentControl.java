@@ -36,7 +36,7 @@ public class AddDepartmentControl {
     @PutMapping("/departmentedit/{id}")
     public void update( @RequestBody AddDepartmentDto addDepDto, @PathVariable("id") Long id ) {
         if (addDepDto != null) {
-            addDepDto.setId(id);
+            addDepDto.setDepartmentId(id);
             AddDepartmentEntity depEntity = new AddDepartmentEntity();
             BeanUtils.copyProperties(addDepDto, depEntity);
 
@@ -72,7 +72,7 @@ public class AddDepartmentControl {
     public AddDepartmentDto edit(@PathVariable("id") Long id){
         AddDepartmentEntity dep;
         dep = addDepartmentService.userUpdate(id);
-        if (dep.getId() != null) {
+        if (dep.getDepartmentId() != null) {
             AddDepartmentDto depDto = new AddDepartmentDto();
             BeanUtils.copyProperties(dep, depDto);
             return depDto;
