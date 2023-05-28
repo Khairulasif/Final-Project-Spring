@@ -26,11 +26,11 @@ public class EmpEntity  {
     private String mobile;
     private String email;
     private String gender;
-    @ManyToOne
-    @JoinColumn(name = "departmentId")
-    private AddDesigEntity designation;
-    @ManyToOne
-    @JoinColumn(name = "designationId")
+//    @ManyToOne
+//    @JoinColumn(name = "departmentId")
+
+//    @ManyToOne
+//    @JoinColumn(name = "designationId")
     private String designation;
     private String nationality;
     private Long nic;

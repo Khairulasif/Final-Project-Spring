@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -21,16 +22,15 @@ public class GenerateSalaryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long salaryId;
-    Long employeeId;
-    String fname;
 
-    Integer basicSalary;
     String month;
-    Integer bonus;
-    Integer allowance;
-    Integer deduction;
-    Integer loan;
-    Integer finalSalary;
+    BigDecimal basicSalary;
+
+    BigDecimal bonus;
+    BigDecimal allowance;
+    BigDecimal deduction;
+    BigDecimal loan;
+    BigDecimal finalSalary;
     LocalDate payDate;
     String status;
     String paidType;
