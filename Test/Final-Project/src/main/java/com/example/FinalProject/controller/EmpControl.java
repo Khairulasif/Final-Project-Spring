@@ -1,6 +1,8 @@
 package com.example.FinalProject.controller;
 
 import com.example.FinalProject.empdto.EmpDto;
+import com.example.FinalProject.empdto.EmpDtoForSalary;
+import com.example.FinalProject.entity.AddAttenEntity;
 import com.example.FinalProject.entity.EmpEntity;
 import com.example.FinalProject.service.EmpService;
 import org.springframework.beans.BeanUtils;
@@ -102,6 +104,24 @@ public class EmpControl {
 
         return user;
     }
+
+
+    @GetMapping("/empgetForSalary")
+    List<EmpDtoForSalary> getEmpForSalary() {
+
+        List<EmpDtoForSalary> users = empService.getEmpForSalary();
+
+
+
+        return users;
+    }
+
+    @GetMapping("/getByDepartmentForSalary/{department}")
+    public List<EmpDtoForSalary> getByDepartment(@PathVariable String department) {
+        return empService.getByDep(department);
+    }
+
+
 
 
 }

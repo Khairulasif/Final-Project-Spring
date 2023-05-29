@@ -19,4 +19,8 @@ public interface EmpRepo extends JpaRepository<EmpEntity, Long> {
 //    AddAdminEntity findByEmail(@Param("email") String email);
 
 
+
+
 }
+
+

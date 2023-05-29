@@ -1,6 +1,9 @@
 package com.example.FinalProject.service;
 
+import com.example.FinalProject.empdto.EmpDtoForSalary;
+import com.example.FinalProject.entity.AddAttenEntity;
 import com.example.FinalProject.entity.EmpEntity;
+import com.example.FinalProject.repository.EmpGetForSalaryRepo;
 import com.example.FinalProject.repository.EmpRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +15,8 @@ public class EmpService {
 
     @Autowired
     EmpRepo empRepo;
+    @Autowired
+    EmpGetForSalaryRepo empGetForSalaryRepo;
 
     public void userSave(EmpEntity empEntity) {
 
@@ -33,5 +38,12 @@ public class EmpService {
 
     public void userDelete(Long id) {
         empRepo.deleteById(id);
+    }
+
+    public List<EmpDtoForSalary> getEmpForSalary() {
+        return empGetForSalaryRepo.findAllEmp();
+    }
+    public List<EmpDtoForSalary> getByDep(String department) {
+        return empGetForSalaryRepo.findByDepartment(department);
     }
 }
