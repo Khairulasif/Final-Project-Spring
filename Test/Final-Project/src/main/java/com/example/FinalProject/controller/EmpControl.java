@@ -122,6 +122,15 @@ public class EmpControl {
     }
 
 
+    @GetMapping("/empGetByIdForSalary/{id}")
+    public EmpDtoForSalary byIdForSalary(@PathVariable("id") Long id){
+        EmpDtoForSalary user = empService.getByIdForSalary(id);
+
+
+        return user;
+    }
+
+
 
 
 }

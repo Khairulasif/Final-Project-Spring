@@ -16,4 +16,7 @@ public interface EmpGetForSalaryRepo extends JpaRepository<EmpDtoForSalary, Long
 
     @Query(value = "SELECT * FROM finalproject.emp_entity where department = :department ", nativeQuery = true)
     List<EmpDtoForSalary> findByDepartment(@Param("department") String department);
+
+    @Query(value = "SELECT * FROM finalproject.emp_entity where employee_id = :id ", nativeQuery = true)
+    EmpDtoForSalary findByIdForSalary(@Param("id") Long id);
 }

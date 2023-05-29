@@ -46,4 +46,8 @@ public class EmpService {
     public List<EmpDtoForSalary> getByDep(String department) {
         return empGetForSalaryRepo.findByDepartment(department);
     }
+
+    public EmpDtoForSalary getByIdForSalary(Long id) {
+        return empGetForSalaryRepo.findByIdForSalary(id);
+    }
 }
