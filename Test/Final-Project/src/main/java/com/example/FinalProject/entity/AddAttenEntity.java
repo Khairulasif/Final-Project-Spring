@@ -36,7 +36,7 @@ public class AddAttenEntity {
     private LocalTime signIn;
 //    @JsonDeserialize(using = ForTimeSerialize.class)
     private LocalTime signOut;
-    private LocalTime workingHour;
+
     private String status;
 
 

@@ -29,7 +29,7 @@ public class AttendanceGetDto {
     private LocalTime signIn;
     private LocalTime signOut;
 
-    private LocalTime workingHour;
+
     private String department;
     private String designation;
     private String status;

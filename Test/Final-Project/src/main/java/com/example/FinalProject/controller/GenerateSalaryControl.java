@@ -1,6 +1,7 @@
 package com.example.FinalProject.controller;
 
 import com.example.FinalProject.empdto.EmpDto;
+import com.example.FinalProject.empdto.EmpDtoForSalary;
 import com.example.FinalProject.entity.EmpEntity;
 import com.example.FinalProject.entity.GenerateSalaryEntity;
 import com.example.FinalProject.service.EmpService;
@@ -8,6 +9,8 @@ import com.example.FinalProject.service.GenerateSalaryService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -23,6 +26,16 @@ public class GenerateSalaryControl {
 
             genSalaryService.userSave(geSalaryEntity);
         }
+
+    @GetMapping("/getEmpPaid")
+    List<GenerateSalaryEntity> getEmpForSalary() {
+
+        List<GenerateSalaryEntity> users = genSalaryService.getPaidEmp();
+
+
+
+        return users;
+    }
 
     }
 

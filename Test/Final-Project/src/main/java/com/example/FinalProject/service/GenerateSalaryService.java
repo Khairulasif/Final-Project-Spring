@@ -33,4 +33,8 @@ public class GenerateSalaryService {
     public void userDelete(Long id) {
         genSalaryRepo.deleteById(id);
     }
+
+    public List<GenerateSalaryEntity> getPaidEmp() {
+        return genSalaryRepo.findPaid();
+    }
 }
