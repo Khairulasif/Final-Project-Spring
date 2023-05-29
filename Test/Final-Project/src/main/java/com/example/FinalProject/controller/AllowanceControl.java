@@ -3,6 +3,7 @@ package com.example.FinalProject.controller;
 import com.example.FinalProject.empdto.AddDesigDto;
 import com.example.FinalProject.entity.AddDesigEntity;
 import com.example.FinalProject.entity.AllowanceEntity;
+import com.example.FinalProject.entity.DeductionEntity;
 import com.example.FinalProject.service.AddDesigService;
 import com.example.FinalProject.service.AllowanceService;
 import org.springframework.beans.BeanUtils;
@@ -25,4 +26,15 @@ public class AllowanceControl {
 
 
     }
+
+    @GetMapping("/allowances")
+    public AllowanceEntity getAlowancesOfEmp(@RequestParam("id") Long id, @RequestParam("selectedMonth") String selectedMonth) {
+
+
+
+        AllowanceEntity allowance = allowanceService.getAllowance(id, selectedMonth);
+        return allowance;
+    }
+
+
 }

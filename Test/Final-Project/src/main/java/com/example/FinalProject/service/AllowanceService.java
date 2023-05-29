@@ -2,6 +2,7 @@ package com.example.FinalProject.service;
 
 import com.example.FinalProject.entity.AddDepartmentEntity;
 import com.example.FinalProject.entity.AllowanceEntity;
+import com.example.FinalProject.entity.DeductionEntity;
 import com.example.FinalProject.repository.AddDepartmentRepo;
 import com.example.FinalProject.repository.AllowanceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,12 @@ public class AllowanceService {
         return allowanceRepo.findById(id).orElse(new AllowanceEntity());
     }
 
-    public void userDelete(Long id) {
-        allowanceRepo.deleteById(id);
+    public void userDelete(Long id) {allowanceRepo.deleteById(id);
     }
+
+    public AllowanceEntity getAllowance(Long id, String selectedMonth) {
+        return allowanceRepo.findbyIdMonthEmp(id, selectedMonth);
+    }
+
+
 }
